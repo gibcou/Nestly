@@ -1,32 +1,79 @@
-# React + TypeScript + Vite
+# Nestly
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Nestly is a short-term rental landing page — a single-page marketing site with a
+full-screen video hero, floating search bar, featured listings, and everything else
+needed to introduce a home-rental brand.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Full-screen video hero** — autoplaying, looping background video with no dimming
+  overlay, a "liquid glass" navbar, and a character-by-character animated headline.
+- **Floating search bar** — Location / Check-in / Check-out / Guests fields in a white
+  card that overlaps the bottom edge of the hero, Airbnb-style.
+- **Featured Stays** — responsive grid of listing cards (photo, title, location,
+  rating, price per night).
+- **How it works** — 3-step Search → Book → Stay overview with icon badges.
+- **Testimonials** — guest reviews with star ratings.
+- **Footer** — brand blurb, link columns (Company / Support / Legal), and social icons.
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vite.dev/) for dev server and bundling
+- [Tailwind CSS](https://tailwindcss.com/) (v3) for styling
+- [lucide-react](https://lucide.dev/) for icons
+- [Inter](https://fonts.google.com/specimen/Inter) (Google Fonts) as the global typeface
 
-## Expanding the Oxlint configuration
+## Project structure
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```
+vex-hero/
+├── index.html                  # Google Fonts link + root HTML shell
+├── tailwind.config.js          # Tailwind theme (Inter font family)
+├── src/
+│   ├── main.tsx                # React entry point
+│   ├── App.tsx                 # Page composition (Hero + sections)
+│   ├── index.css               # Global styles, .liquid-glass utility class
+│   └── components/
+│       ├── Hero.tsx             # Video background, navbar, hero copy/buttons
+│       ├── AnimatedHeading.tsx  # Character-by-character text entrance animation
+│       ├── FadeIn.tsx           # Reusable delayed fade-in wrapper
+│       ├── SearchBar.tsx        # Floating booking search card
+│       ├── FeaturedListings.tsx # Listing cards grid
+│       ├── HowItWorks.tsx       # 3-step process section
+│       ├── Testimonials.tsx     # Guest review cards
+│       └── Footer.tsx           # Site footer
+└── package.json
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Getting started
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the dev server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Notes
+
+- The hero video is loaded from an external CDN URL (see `VIDEO_URL` in
+  `src/components/Hero.tsx`) — swap this out for your own asset as needed.
+- Featured listing photos are hotlinked from Unsplash for demo purposes.
