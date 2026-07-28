@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { MapPin, Star } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ConciergeChat from '../components/ConciergeChat';
 import { getListingBySlug } from '../data/listings';
 
 export default function ListingDetail() {
@@ -115,6 +116,7 @@ export default function ListingDetail() {
         </div>
       </main>
       <Footer />
+      <ConciergeChat listing={listing} />
     </div>
   );
 }
