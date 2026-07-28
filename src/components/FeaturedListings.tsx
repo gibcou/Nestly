@@ -1,4 +1,4 @@
-import { MapPin, Star } from 'lucide-react';
+import { Camera, MapPin, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { listings } from '../data/listings';
 
@@ -24,13 +24,17 @@ export default function FeaturedListings() {
             to={`/listings/${listing.slug}`}
             className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors block"
           >
-            <div className="aspect-[4/3] w-full overflow-hidden">
+            <div className="aspect-[4/3] w-full overflow-hidden relative">
               <img
                 src={listing.image}
                 alt={listing.title}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
+              <span className="absolute bottom-2 right-2 bg-black/60 backdrop-blur-sm rounded-full px-2 py-1 text-xs flex items-center gap-1">
+                <Camera size={12} />
+                {listing.images.length} photos
+              </span>
             </div>
             <div className="p-4">
               <div className="flex items-start justify-between gap-2 mb-1">

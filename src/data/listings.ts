@@ -1,6 +1,7 @@
 export interface Listing {
   slug: string;
   image: string;
+  images: string[];
   title: string;
   location: string;
   price: number;
@@ -14,6 +15,12 @@ export const listings: Listing[] = [
     slug: 'modern-lakeside-villa',
     image:
       'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=80&auto=format&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80&auto=format&fit=crop',
+    ],
     title: 'Modern Lakeside Villa',
     location: 'Lake Como, Italy',
     price: 320,
@@ -26,6 +33,12 @@ export const listings: Listing[] = [
     slug: 'cozy-mountain-cabin',
     image:
       'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80&auto=format&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1518733057094-95b53143d2a7?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=80&auto=format&fit=crop',
+    ],
     title: 'Cozy Mountain Cabin',
     location: 'Aspen, Colorado',
     price: 210,
@@ -38,6 +51,12 @@ export const listings: Listing[] = [
     slug: 'sunlit-family-home',
     image:
       'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80&auto=format&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=80&auto=format&fit=crop',
+    ],
     title: 'Sunlit Family Home',
     location: 'Austin, Texas',
     price: 175,
@@ -50,6 +69,12 @@ export const listings: Listing[] = [
     slug: 'minimalist-city-loft',
     image:
       'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80&auto=format&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1615873968403-89e068629265?w=1200&q=80&auto=format&fit=crop',
+    ],
     title: 'Minimalist City Loft',
     location: 'Copenhagen, Denmark',
     price: 195,
@@ -62,6 +87,12 @@ export const listings: Listing[] = [
     slug: 'private-pool-villa',
     image:
       'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=1200&q=80&auto=format&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1615529182904-14819c35db37?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&q=80&auto=format&fit=crop',
+    ],
     title: 'Private Pool Villa',
     location: 'Bali, Indonesia',
     price: 280,
@@ -74,6 +105,12 @@ export const listings: Listing[] = [
     slug: 'bright-coastal-retreat',
     image:
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&auto=format&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=1200&q=80&auto=format&fit=crop',
+    ],
     title: 'Bright Coastal Retreat',
     location: 'Santorini, Greece',
     price: 260,
