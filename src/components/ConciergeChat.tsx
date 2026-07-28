@@ -48,12 +48,15 @@ export default function ConciergeChat({ listing }: ConciergeChatProps) {
       }
 
       setMessages((prev) => [...prev, { role: 'assistant', content: data.reply }]);
-    } catch {
+    } catch (err) {
+      const detail = err instanceof Error ? err.message : undefined;
       setMessages((prev) => [
         ...prev,
         {
           role: 'assistant',
-          content: "Sorry, I'm having trouble responding right now. Please try again shortly.",
+          content: detail
+            ? `Concierge error: ${detail}`
+            : "Sorry, I'm having trouble responding right now. Please try again shortly.",
         },
       ]);
     } finally {
