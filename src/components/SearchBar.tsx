@@ -1,4 +1,5 @@
 import { Search, MapPin, Calendar, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function SearchBar() {
   return (
@@ -58,10 +59,13 @@ export default function SearchBar() {
           </div>
         </div>
 
-        <button className="flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-xl font-medium text-sm hover:bg-gray-800 transition-colors md:ml-6">
+        <Link
+          to="/stays"
+          className="flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-xl font-medium text-sm hover:bg-gray-800 transition-colors md:ml-6"
+        >
           <Search size={16} />
           Search
-        </button>
+        </Link>
       </div>
     </div>
   );

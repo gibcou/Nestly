@@ -1,63 +1,6 @@
 import { MapPin, Star } from 'lucide-react';
-
-interface Listing {
-  image: string;
-  title: string;
-  location: string;
-  price: number;
-  rating: number;
-}
-
-const listings: Listing[] = [
-  {
-    image:
-      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80&auto=format&fit=crop',
-    title: 'Modern Lakeside Villa',
-    location: 'Lake Como, Italy',
-    price: 320,
-    rating: 4.96,
-  },
-  {
-    image:
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80&auto=format&fit=crop',
-    title: 'Cozy Mountain Cabin',
-    location: 'Aspen, Colorado',
-    price: 210,
-    rating: 4.89,
-  },
-  {
-    image:
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80&auto=format&fit=crop',
-    title: 'Sunlit Family Home',
-    location: 'Austin, Texas',
-    price: 175,
-    rating: 4.8,
-  },
-  {
-    image:
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80&auto=format&fit=crop',
-    title: 'Minimalist City Loft',
-    location: 'Copenhagen, Denmark',
-    price: 195,
-    rating: 4.92,
-  },
-  {
-    image:
-      'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=800&q=80&auto=format&fit=crop',
-    title: 'Private Pool Villa',
-    location: 'Bali, Indonesia',
-    price: 280,
-    rating: 4.98,
-  },
-  {
-    image:
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop',
-    title: 'Bright Coastal Retreat',
-    location: 'Santorini, Greece',
-    price: 260,
-    rating: 4.91,
-  },
-];
+import { Link } from 'react-router-dom';
+import { listings } from '../data/listings';
 
 export default function FeaturedListings() {
   return (
@@ -76,9 +19,10 @@ export default function FeaturedListings() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {listings.map((listing) => (
-          <div
-            key={listing.title}
-            className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors"
+          <Link
+            key={listing.slug}
+            to={`/listings/${listing.slug}`}
+            className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors block"
           >
             <div className="aspect-[4/3] w-full overflow-hidden">
               <img
@@ -105,7 +49,7 @@ export default function FeaturedListings() {
                 <span className="text-gray-400"> / night</span>
               </p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

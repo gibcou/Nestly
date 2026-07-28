@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import FadeIn from './FadeIn';
 import AnimatedHeading from './AnimatedHeading';
+import Navbar from './Navbar';
 
 const VIDEO_URL =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260403_050628_c4e32401-fab4-4a27-b7a8-6e9291cd5959.mp4';
@@ -17,36 +19,11 @@ export default function Hero() {
         playsInline
       />
 
+      {/* Navbar (overlaid on top of video) */}
+      <Navbar overlay />
+
       {/* Content layer */}
       <div className="relative z-10 flex flex-col h-full">
-        {/* Navbar */}
-        <div className="px-6 md:px-12 lg:px-16 pt-6">
-          <nav className="liquid-glass rounded-xl px-4 py-2 flex items-center justify-between">
-            <div className="text-2xl font-semibold tracking-tight">
-              Nestly
-            </div>
-
-            <div className="hidden md:flex items-center gap-8 text-sm">
-              <a href="#" className="hover:text-gray-300 transition-colors">
-                Stays
-              </a>
-              <a href="#" className="hover:text-gray-300 transition-colors">
-                Experiences
-              </a>
-              <a href="#" className="hover:text-gray-300 transition-colors">
-                Host
-              </a>
-              <a href="#" className="hover:text-gray-300 transition-colors">
-                Support
-              </a>
-            </div>
-
-            <button className="bg-white text-black px-6 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">
-              Book Now
-            </button>
-          </nav>
-        </div>
-
         {/* Hero content */}
         <div className="px-6 md:px-12 lg:px-16 flex-1 flex flex-col justify-end pb-12 lg:pb-16">
           <div className="lg:grid lg:grid-cols-2 lg:items-end">
@@ -67,12 +44,18 @@ export default function Hero() {
 
               <FadeIn delay={1200} duration={1000}>
                 <div className="flex flex-wrap gap-4">
-                  <button className="bg-white text-black px-8 py-3 rounded-lg font-medium">
+                  <Link
+                    to="/stays"
+                    className="bg-white text-black px-8 py-3 rounded-lg font-medium"
+                  >
                     Find a Stay
-                  </button>
-                  <button className="liquid-glass text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-black transition-colors">
+                  </Link>
+                  <Link
+                    to="/stays"
+                    className="liquid-glass text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-black transition-colors"
+                  >
                     Explore Listings
-                  </button>
+                  </Link>
                 </div>
               </FadeIn>
             </div>
